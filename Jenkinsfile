@@ -1,32 +1,33 @@
-pipeline {
+pipeline 
+{
 
   agent any
-  environment {
-      PATH = "/bin/mvn:$PATH"
-  }
-
-
-  stages {
-      stage("Get the code from GITGIUB")
+  environment 
+	{
+      	PATH = "/bin/mvn:$PATH"
+  	}
+  
+stages 
 {
+      
+	stage("Code Collect")
+	{
           steps
-{
-            git branch: 'master', url: 'https://github.com/GREATCODERHYD/boxfuse-sample-java-war-hello.git'
+		{
+            	git branch: 'master', url: 'https://github.com/GREATCODERHYD/boxfuse-sample-java-war-hello.git'
           
-          }
+        	  }
       }
-
-
-
-
-      stage("build code"){
-          steps{
+      stage("building code"){
+          steps
+		{
               sh "mvn clean package"
-          }
+          	}
       }
-      stage("deploy the code"){
+      
+stage("deploy"){
           steps{
-             deploy adapters: [tomcat9(credentialsId: 'id111', path: '', url: 'http://52.66.198.188:8080')], contextPath: 'App', war: '**/*.war'
+             deploy adapters: [tomcat9(credentialsId: '1010', path: '', url: 'http://65.2.127.59:8080/')], contextPath: 'test1', war: '**/*.war'
           }
       }
   }
