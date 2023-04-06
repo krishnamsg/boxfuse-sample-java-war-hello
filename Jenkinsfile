@@ -21,7 +21,7 @@ stages
       stage("building code"){
           steps
 		{
-              sh "mn clean package"
+              sh "mvn clean package"
           	}
       }
       
