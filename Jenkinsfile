@@ -27,7 +27,7 @@ stages
       
 stage("deploy"){
           steps{
-             deploy adapters: [tomcat9(credentialsId: '1010', path: '', url: 'http://65.2.127.59:8080/')], contextPath: 'test1', war: '**/*.war'
+             deploy adapters: [tomcat9(credentialsId: 'bhupesh1', path: '', url: 'http://13.234.78.182:8080')], contextPath: '100apps', war: '**/*.war'
           }
       }
   }
