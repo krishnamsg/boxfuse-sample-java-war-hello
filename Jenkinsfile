@@ -14,7 +14,7 @@ stages
 	{
           steps
 		{
-            	git branch: 'master', url: 'https://github.com/GREATCODERHYD/boxfuse-sample-java-war-hello.git'
+            	git branch: 'master', url: 'https://github.com/krishnamsg/boxfuse-sample-java-war-hello.git'
           
         	  }
       }
